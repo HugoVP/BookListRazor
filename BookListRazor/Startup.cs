@@ -31,7 +31,7 @@ namespace BookListRazor
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddDbContext<Model.ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
